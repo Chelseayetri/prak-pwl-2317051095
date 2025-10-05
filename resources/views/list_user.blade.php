@@ -1,31 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container py-4">
   <div class="d-flex justify-content-between align-items-center mb-3">
-    <h1 class="m-0">Daftar Pengguna</h1>
+    <h1 class="h3 mb-0">{{ $title }}</h1>
     <a href="{{ route('user.create') }}" class="btn btn-success">+ Tambah User</a>
   </div>
 
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Nama</th>
-        <th>NPM</th>
-        <th>Kelas</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach ($users as $user)
-        <tr>
-          <td>{{ $user->id }}</td>
-          <td>{{ $user->nama }}</td>
-          <td>{{ $user->nim }}</td>
-          <td>{{ $user->nama_kelas }}</td>
-        </tr>
-      @endforeach
-    </tbody>
-  </table>
+  {{-- (opsional) search bar non-fungsional dulu --}}
+  <form class="mb-3">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Cari nama / NPM (dummy)">
+      <button class="btn btn-outline-secondary" type="button">Cari</button>
+    </div>
+  </form>
+
+  <div class="card shadow-sm">
+    <div class="card-body p-0">
+      {{-- gunakan komponen tabel (poin 5) --}}
+      <x-user-table :users="$users" />
+    </div>
+  </div>
 </div>
 @endsection
