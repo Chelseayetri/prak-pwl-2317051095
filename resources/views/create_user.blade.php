@@ -50,7 +50,6 @@
   </div>
 </div>
 
-{{-- Bootstrap form validation ringan --}}
 <script>
 (() => {
   'use strict';

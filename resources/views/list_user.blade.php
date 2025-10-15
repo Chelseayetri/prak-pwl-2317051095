@@ -7,7 +7,6 @@
     <a href="{{ route('user.create') }}" class="btn btn-success">+ Tambah User</a>
   </div>
 
-  {{-- (opsional) search bar non-fungsional dulu --}}
   <form class="mb-3">
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Cari nama / NPM (dummy)">
@@ -17,7 +16,6 @@
 
   <div class="card shadow-sm">
     <div class="card-body p-0">
-      {{-- gunakan komponen tabel (poin 5) --}}
       <x-user-table :users="$users" />
     </div>
   </div>
